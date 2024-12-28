@@ -5,8 +5,14 @@
 		"factoryName": {
 			"value": "adf-8991"
 		},
-		"LS_triggers_connectionString": {
+		"LS_BlbSA_connectionString": {
 			"value": ""
+		},
+		"LS_Gen2_accountKey": {
+			"value": ""
+		},
+		"LS_Gen2_properties_typeProperties_url": {
+			"value": "https://destsa91.dfs.core.windows.net/"
 		},
 		"storagetrigger_properties_typeProperties_scope": {
 			"value": "/subscriptions/7b344f59-3714-4503-9713-7997551aa939/resourceGroups/my-RG8991/providers/Microsoft.Storage/storageAccounts/srcsa91"

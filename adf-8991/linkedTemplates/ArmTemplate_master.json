@@ -7,9 +7,17 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "adf-8991"
 		},
-		"LS_triggers_connectionString": {
+		"LS_BlbSA_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LS_triggers'"
+			"metadata": "Secure string for 'connectionString' of 'LS_BlbSA'"
+		},
+		"LS_Gen2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_Gen2'"
+		},
+		"LS_Gen2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://destsa91.dfs.core.windows.net/"
 		},
 		"storagetrigger_properties_typeProperties_scope": {
 			"type": "string",
@@ -42,8 +50,14 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"LS_triggers_connectionString": {
-						"value": "[parameters('LS_triggers_connectionString')]"
+					"LS_BlbSA_connectionString": {
+						"value": "[parameters('LS_BlbSA_connectionString')]"
+					},
+					"LS_Gen2_accountKey": {
+						"value": "[parameters('LS_Gen2_accountKey')]"
+					},
+					"LS_Gen2_properties_typeProperties_url": {
+						"value": "[parameters('LS_Gen2_properties_typeProperties_url')]"
 					},
 					"storagetrigger_properties_typeProperties_scope": {
 						"value": "[parameters('storagetrigger_properties_typeProperties_scope')]"
