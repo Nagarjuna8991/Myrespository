@@ -290,6 +290,7 @@
 						"SourceData filter(StudentsID == 1 && Dept == 'EEE') ~> filtertherows",
 						"filtertherows sink(allowSchemaDrift: true,",
 						"     validateSchema: false,",
+						"     rowUrlColumn:'StudentsName',",
 						"     umask: 0022,",
 						"     preCommands: [],",
 						"     postCommands: [],",
