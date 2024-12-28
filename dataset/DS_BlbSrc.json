@@ -1,0 +1,40 @@
+{
+	"name": "DS_BlbSrc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BlbSA",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "2018_Students_Batch.csv",
+				"container": "srccon"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "StudentsID",
+				"type": "String"
+			},
+			{
+				"name": "StudentsName",
+				"type": "String"
+			},
+			{
+				"name": "Address",
+				"type": "String"
+			},
+			{
+				"name": "Dept",
+				"type": "String"
+			}
+		]
+	}
+}
