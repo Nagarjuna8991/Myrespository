@@ -1,0 +1,58 @@
+{
+	"name": "df_dataflow",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"linkedService": {
+						"referenceName": "LS_BlbSA",
+						"type": "LinkedServiceReference"
+					},
+					"name": "SourceData"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DS_Dest",
+						"type": "DatasetReference"
+					},
+					"name": "sinkdata"
+				}
+			],
+			"transformations": [
+				{
+					"name": "filtertherows"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          StudentsID as integer,",
+				"          StudentsName as string,",
+				"          Address as string,",
+				"          Dept as string",
+				"     ),",
+				"     useSchema: false,",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'delimited',",
+				"     container: 'srccon',",
+				"     fileName: '2017_Students_Batch.csv',",
+				"     columnDelimiter: ',',",
+				"     escapeChar: '\\\\',",
+				"     quoteChar: '\\\"',",
+				"     columnNamesAsHeader: true) ~> SourceData",
+				"SourceData filter(StudentsID == 1 && Dept == 'EEE') ~> filtertherows",
+				"filtertherows sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sinkdata"
+			]
+		}
+	}
+}
