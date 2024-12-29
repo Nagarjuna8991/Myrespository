@@ -54,7 +54,7 @@
 				"selecttrans sort(asc(StudentsName, true)) ~> sort1",
 				"sort1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     partitionFileNames:['sortedfiles'],",
+				"     partitionFileNames:['sortedfiles.csv'],",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
